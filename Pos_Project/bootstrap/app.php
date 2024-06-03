@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,8 +12,21 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware) {
-        //
-    })
+        
+        $middleware->validateCsrfTokens( except: [
+            'http://127.0.0.1:8000/user-registration',
+        ]);
+
+        $middleware->alias([
+           
+        ]);
+
+
+      })
+
     ->withExceptions(function (Exceptions $exceptions) {
-        //
+        
+
+
     })->create();
+
