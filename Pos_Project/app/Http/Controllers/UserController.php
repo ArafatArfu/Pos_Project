@@ -8,6 +8,7 @@ use App\Helper\JWTToken;
 use App\Mail\OTPMail;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Mail;
+use Psy\Readline\Hoa\Console;
 
 class UserController extends Controller
 {
@@ -21,6 +22,13 @@ class UserController extends Controller
     }
 
 
+    function SendOtpPage():View{
+        return view('pages.auth.send-otp-page');
+    }
+
+    function VerifyOTPPage():View{
+        return view('pages.auth.verify-otp-page');
+    }
 
 
     function UserRegistration(Request $request){
@@ -38,6 +46,7 @@ class UserController extends Controller
             ],200);
 
         } catch (Exception $e) {
+
             return response()->json([
                 'status' => 'failed',
                 'message' => 'User Registration Failed'
