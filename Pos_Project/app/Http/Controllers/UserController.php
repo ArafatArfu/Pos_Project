@@ -35,7 +35,6 @@ class UserController extends Controller
         return view('pages.auth.reset-pass-page');
     }
 
-
     function UserRegistration(Request $request){
         try {
             User::create([
