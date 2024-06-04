@@ -14,10 +14,11 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         
         $middleware->validateCsrfTokens( except: [
-            'http://127.0.0.1:8000/user-registration',
+           'http://127.0.0.1:8000/user-registration',
            'http://127.0.0.1:8000/user-login',
            'http://127.0.0.1:8000/sent-otp',
            'http://127.0.0.1:8000/verify-otp',
+           'http://127.0.0.1:8000/reset-password',
            
         ]);
 
