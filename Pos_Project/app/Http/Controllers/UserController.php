@@ -16,7 +16,11 @@ class UserController extends Controller
         return view('pages.auth.login-page');
     }
 
-    
+    function RegistrationPage():View{
+        return view('pages.auth.registration-page');
+    }
+
+
 
 
     function UserRegistration(Request $request){

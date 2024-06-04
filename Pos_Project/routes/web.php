@@ -20,3 +20,4 @@ Route::post('/reset-password',[UserController::class,'ResetPassword'])
     //Page Route
 Route::get('/userLogin',[UserController::class,'LoginPage']);
 Route::get('/dashboard',[DashboardController::class,'DashboardPage'])->middleware([TokenVerificationMiddleware::class]);
+Route::get('/userRegistration',[UserController::class,'RegistrationPage']);
