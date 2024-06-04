@@ -6,10 +6,19 @@ use Exception;
 use Illuminate\Http\Request;
 use App\Helper\JWTToken;
 use App\Mail\OTPMail;
+use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
 {
+    
+    function LoginPage():View{
+        return view('pages.auth.login-page');
+    }
+
+    
+
+
     function UserRegistration(Request $request){
         try {
             User::create([
@@ -119,7 +128,7 @@ class UserController extends Controller
 
     function ResetPassword(Request $request){
         try{
-            
+
             $email=$request->header('email');
             $password=$request->input('password');
             User::where('email','=',$email)->update(['password'=>$password]);
