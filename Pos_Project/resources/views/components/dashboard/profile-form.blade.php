@@ -60,5 +60,43 @@
 
     }
 
- 
+    async function onUpdate() {
+
+                    let firstName = document.getElementById('firstName').value;
+                    let lastName = document.getElementById('lastName').value;
+                    let mobile = document.getElementById('mobile').value;
+                    let password = document.getElementById('password').value;
+
+                    if(firstName.length===0){
+                        errorToast('First Name is required')
+                    }
+                    else if(lastName.length===0){
+                        errorToast('Last Name is required')
+                    }
+                    else if(mobile.length===0){
+                        errorToast('Mobile is required')
+                    }
+                    else if(password.length===0){
+                        errorToast('Password is required')
+                    }
+                    else{
+                        showLoader();
+                        let res=await axios.post("/user-update",{
+                            firstName:firstName,
+                            lastName:lastName,
+                            mobile:mobile,
+                            password:password
+                        })
+                        hideLoader();
+                        if(res.status===200 && res.data['status']==='success'){
+                            successToast(res.data['message']);
+                            await getProfile();
+                        }
+                        else{
+                            errorToast(res.data['message'])
+                        }
+                    }
+    }
+
+</script>
 
