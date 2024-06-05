@@ -104,7 +104,7 @@
             showLoader();
             let res = await axios.post("/create-product",formData,config)
             hideLoader();
-
+ 
             if(res.status===201){
                 successToast('Request completed');
                 document.getElementById("save-form").reset();
@@ -112,7 +112,6 @@
             }
             else{
                 errorToast("Request fail !")
-            }
         }
     }
 </script>
