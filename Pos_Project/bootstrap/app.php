@@ -32,6 +32,9 @@ return Application::configure(basePath: dirname(__DIR__))
            'http://127.0.0.1:8000/customer-by-id',
                   //product api
            'http://127.0.0.1:8000/create-product',  
+           'http://127.0.0.1:8000/product-by-id',  
+           'http://127.0.0.1:8000/delete-product',  
+           
         ]);
 
         $middleware->alias([
