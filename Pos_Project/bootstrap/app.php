@@ -33,7 +33,8 @@ return Application::configure(basePath: dirname(__DIR__))
                   //product api
            'http://127.0.0.1:8000/create-product',  
            'http://127.0.0.1:8000/product-by-id',  
-           'http://127.0.0.1:8000/delete-product',  
+           'http://127.0.0.1:8000/delete-product',
+           'http://127.0.0.1:8000/update-product', 
            
         ]);
 
