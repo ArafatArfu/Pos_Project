@@ -6,11 +6,19 @@ use App\Models\Customer;
 use App\Models\Invoice;
 use App\Models\InvoiceProduct;
 use Exception;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
 class InvoiceController extends Controller
 {
+
+    
+    function SalePage():View{
+        return view('pages.dashboard.sale-page');
+    }
+
+
     function invoiceCreate(Request $request){
 
        DB::beginTransaction();
