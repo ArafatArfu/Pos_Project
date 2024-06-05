@@ -19,6 +19,11 @@ return Application::configure(basePath: dirname(__DIR__))
            'http://127.0.0.1:8000/sent-otp',
            'http://127.0.0.1:8000/verify-otp',
            'http://127.0.0.1:8000/reset-password',
+           'http://127.0.0.1:8000/user-update',
+           'http://127.0.0.1:8000/create-category',
+           'http://127.0.0.1:8000/delete-category',
+           'http://127.0.0.1:8000/update-category',
+           'http://127.0.0.1:8000/category-by-id',
            
         ]);
 
